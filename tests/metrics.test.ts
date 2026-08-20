@@ -12,13 +12,13 @@ import { calculateDeterministicMetrics } from "@/lib/metrics/calculate";
 describe("practice pack and scenario schemas", () => {
   it("validates a practice pack", () => {
     const parsed = PracticePackSchema.parse({
-      title: "Retorio pack",
-      targetRole: "Working Student AI PE",
+      title: "Working student pack",
+      targetRole: "Working Student Data Engineering",
       sourceText: "A".repeat(40),
       sourceType: "paste",
-      summary: "A working-student data role at Retorio.",
+      summary: "A working-student data and product engineering role.",
     });
-    expect(parsed.title).toContain("Retorio");
+    expect(parsed.title).toContain("Working student");
   });
 
   it("rejects a scenario without approved facts", () => {

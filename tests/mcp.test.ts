@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { callTool, handleMcpRequest } from "@/lib/mcp/protocol";
-import { retorioSeedScenario } from "@/lib/seed/retorio";
+import { demoSeedScenario } from "@/lib/seed/demo";
 
 describe("MCP and AI tool contracts", () => {
   it("lists the expected tools", async () => {
@@ -12,9 +12,9 @@ describe("MCP and AI tool contracts", () => {
   });
 
   it("keeps approved facts bounded to the seeded scenario", () => {
-    expect(retorioSeedScenario.approvedFacts.every((fact) => fact.length > 8)).toBe(true);
+    expect(demoSeedScenario.approvedFacts.every((fact) => fact.length > 8)).toBe(true);
     expect(
-      retorioSeedScenario.approvedFacts.some((fact) => fact.toLowerCase().includes("retorio")),
+      demoSeedScenario.approvedFacts.some((fact) => fact.toLowerCase().includes("working student")),
     ).toBe(true);
   });
 

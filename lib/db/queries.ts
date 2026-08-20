@@ -10,7 +10,7 @@ import {
 } from "@/lib/db/schema";
 import { isGuestExpired } from "@/lib/auth/guest";
 import { SEED_PACK_ID, SEED_SCENARIO_ID, SYSTEM_OWNER_ID } from "@/lib/constants";
-import { retorioSeedPack, retorioSeedScenario } from "@/lib/seed/retorio";
+import { demoSeedPack, demoSeedScenario } from "@/lib/seed/demo";
 
 export function ownedBy(ownerId: string) {
   return eq(practicePacks.ownerId, ownerId);
@@ -32,18 +32,18 @@ export function isOwnedAndActive<T extends { ownerId: string; expiresAt?: Date |
   return record.ownerId === ownerId && !isGuestExpired(record.expiresAt, now);
 }
 
-export async function ensureRetorioSeed() {
+export async function ensureDemoSeed() {
   const db = getDb();
   await db
     .insert(practicePacks)
     .values({
-      ...retorioSeedPack,
+      ...demoSeedPack,
       expiresAt: null,
     })
     .onConflictDoNothing();
   await db
     .insert(scenarios)
-    .values(retorioSeedScenario)
+    .values(demoSeedScenario)
     .onConflictDoNothing();
   return { packId: SEED_PACK_ID, scenarioId: SEED_SCENARIO_ID, ownerId: SYSTEM_OWNER_ID };
 }

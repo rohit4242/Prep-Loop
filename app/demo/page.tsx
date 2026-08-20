@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { retorioSeedScenario } from "@/lib/seed/retorio";
+import { demoSeedScenario } from "@/lib/seed/demo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -40,16 +40,16 @@ export default function DemoPage() {
       <div>
         <h1 className="text-3xl font-semibold tracking-tight">Guest interview demo</h1>
         <p className="mt-2 text-muted-foreground">
-          Try the seeded Retorio Working Student AI Product Engineering scenario without creating an account.
+          Try a seeded working-student technical interview without creating an account.
         </p>
       </div>
       <Card>
         <CardHeader>
-          <CardTitle>{retorioSeedScenario.title}</CardTitle>
+          <CardTitle>{demoSeedScenario.title}</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3 text-sm">
-          <p>{retorioSeedScenario.interviewerPersona}</p>
-          <p className="text-muted-foreground">{retorioSeedScenario.openingPrompt}</p>
+          <p>{demoSeedScenario.interviewerPersona}</p>
+          <p className="text-muted-foreground">{demoSeedScenario.openingPrompt}</p>
         </CardContent>
       </Card>
       <Button onClick={() => void start()} disabled={loading}>

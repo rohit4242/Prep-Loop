@@ -6,7 +6,7 @@ import { getDb } from "@/lib/db";
 import { sessions } from "@/lib/db/schema";
 import { createId } from "@/lib/id";
 import { createInterviewRoom } from "@/lib/livekit/token";
-import { ensureRetorioSeed, getScenarioById } from "@/lib/db/queries";
+import { ensureDemoSeed, getScenarioById } from "@/lib/db/queries";
 import { SEED_SCENARIO_ID } from "@/lib/constants";
 
 const schema = z.object({
@@ -19,7 +19,7 @@ export async function POST(request: Request) {
     const owner = await requireOwner();
     const body = schema.parse(await request.json().catch(() => ({})));
     if (body.demo) {
-      await ensureRetorioSeed();
+      await ensureDemoSeed();
     }
     const scenarioId = body.demo ? SEED_SCENARIO_ID : body.scenarioId;
     if (!scenarioId) {

@@ -6,8 +6,8 @@ test("practice pack page is protected", async ({ page }) => {
 });
 
 test("scenario review route is protected", async ({ page }) => {
-  await page.goto("/practice/seed-retorio-ai-pe-data");
-  await expect(page).not.toHaveURL(/\/practice\/seed-retorio-ai-pe-data$/);
+  await page.goto("/practice/seed-working-student-data");
+  await expect(page).not.toHaveURL(/\/practice\/seed-working-student-data$/);
 });
 
 test("interview room preview renders avatar state transitions", async ({ page }) => {

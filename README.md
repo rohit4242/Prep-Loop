@@ -2,7 +2,7 @@
 
 Student-focused interview coach for working-student and technical interviews. Paste a CV or job description, generate a realistic scenario, speak with a Python LiveKit interviewer and a custom 2D avatar, then review transcript-backed scores and progress.
 
-The first seeded scenario targets the **Retorio Working Student AI Product Engineering – Data** role. Signed-in users can create their own practice packs.
+The guest demo uses a seeded **working-student data & product engineering** interview. Signed-in users can create their own practice packs.
 
 ![PrepLoop landing page](docs/screenshots/landing.png)
 
@@ -77,7 +77,7 @@ Refresh screenshots after UI changes with `node scripts/capture-screenshots.mjs`
 ## Demo
 
 1. Open `/` and click **Try interview demo**.
-2. Review the seeded Retorio scenario and start.
+2. Review the seeded working-student scenario and start.
 3. Allow microphone access. Camera is optional and never stored.
 4. End the interview to generate transcript, metrics, and feedback.
 5. Sign in to save history, create packs from paste/PDF, and ask the progress assistant.

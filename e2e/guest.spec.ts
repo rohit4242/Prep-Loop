@@ -5,7 +5,7 @@ test("guest can open the landing page and demo", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /practice the interview/i })).toBeVisible();
   await page.getByRole("link", { name: /try interview demo/i }).click();
   await expect(page.getByRole("heading", { name: /guest interview demo/i })).toBeVisible();
-  await expect(page.getByText(/Retorio/i).first()).toBeVisible();
+  await expect(page.getByText(/working-student technical interview/i).first()).toBeVisible();
 });
 
 test("sign-in is required for the dashboard", async ({ page }) => {

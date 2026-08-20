@@ -12,7 +12,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 
 export function PracticePackForm() {
   const router = useRouter();
-  const [targetRole, setTargetRole] = useState("Working Student, AI Product Engineering – Data");
+  const [targetRole, setTargetRole] = useState("Working Student, Data & Product Engineering");
   const [sourceText, setSourceText] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);

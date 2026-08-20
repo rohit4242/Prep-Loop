@@ -6,8 +6,8 @@ export const PROMPT_VERSION = "1.0.0";
 export const AGENT_NAME = "preploop-interviewer";
 
 export const SYSTEM_OWNER_ID = "system";
-export const SEED_PACK_ID = "seed-retorio-ai-pe-data";
-export const SEED_SCENARIO_ID = "seed-retorio-ai-pe-data-v1";
+export const SEED_PACK_ID = "seed-working-student-data";
+export const SEED_SCENARIO_ID = "seed-working-student-data-v1";
 
 export const FILLER_WORDS = [
   "um",
